@@ -29,6 +29,12 @@ def update_student(request,id):
     student = Student.objects.get(id=id)
     form = StudentForm(instance=student)
 
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+            return redirect('/list_student')
+              
     data = {
         'form': form
     }
