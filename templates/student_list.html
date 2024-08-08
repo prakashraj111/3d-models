@@ -19,9 +19,11 @@
 
    <b>::::Student list::::</b>
     {% for s in students %}
+        <h1>ID: {{s.id}}</h1>
         <h1>Name: {{s.name}}</h1>
         <h1>Age: {{s.age}}</h1>
         <h1>Address: {{s.address}}</h1>
+        <a href="/update/{{s.id}}/">Update info</a>
         <hr>
     {% endfor %}
 

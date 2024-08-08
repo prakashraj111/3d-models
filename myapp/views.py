@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Student
 from .forms import StudentForm
 
@@ -14,7 +14,22 @@ def create_list(request):
 
     print(request.POST)
     form = StudentForm()
+    if request.method == 'POST':
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            form.save()  #save the student data to database
+            return redirect('/list_student/')
+
     data = {
         'form': form
     }
     return render(request, "create_list.html", data)
+
+def update_student(request,id):
+    student = Student.objects.get(id=id)
+    form = StudentForm(instance=student)
+
+    data = {
+        'form': form
+    }
+    return render(request, "update.html", data)

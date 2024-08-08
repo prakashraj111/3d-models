@@ -6,4 +6,6 @@ urlpatterns = [
 
    path('create/', create_list),
 
+   path('update/<int:id>/', update_student),
+
 ]
