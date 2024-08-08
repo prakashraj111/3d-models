@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(186, 218, 231);
+        }
+        div{
+            margin: 4rem 5rem;
+        }
+        h1{
+            color: red;
+        }
+        p{
+            color: blue;
+        }
+        h2{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>:::::::::Task:::::::::</h1>
+    <h1>Name: {{name}}</h1>
+    <h2>Address : {{address}}</h2>
+    <h2>Age : {{age}}</h2>
+    <h2>Gender : {{gender}}</h2>
+    <p>Description: {{description}}</p>
+    <h2>random no: {{random_no}}</h2>
+
+    <ul> <b>::::My Hobbies::::</b>
+        {% for hobby in hobbies %}
+        <li>{{hobby}}</li>
+        {% endfor %}
+    </ul>
+
+    {% if age > 18  %}
+        <h1>You are eligible to vote!</h1>
+    {% else %}
+        <h1>You are not eligible to vote!</h1>
+    {% endif %} 
+
+    
+</div>
+</body>
+</html>

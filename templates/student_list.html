@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        h1{
+            color: red;
+        }
+        hr{
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Students</h1>
+ 
+
+   <b>::::Student list::::</b>
+    {% for s in students %}
+        <h1>Name: {{s.name}}</h1>
+        <h1>Age: {{s.age}}</h1>
+        <h1>Address: {{s.address}}</h1>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
