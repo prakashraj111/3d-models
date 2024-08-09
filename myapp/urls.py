@@ -10,4 +10,8 @@ urlpatterns = [
 
    path('delete/<int:id>/', delete_student),
 
+   path('emergency/', emergency_view),
+
+   path('addrequest/', add_blood_request),
+
 ]
